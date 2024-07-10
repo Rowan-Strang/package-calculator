@@ -1,8 +1,55 @@
 // PRICING CALCULATOR //
 
+let answers
+
+try {
+  answers = JSON.parse(localStorage.getItem('answers'))
+} catch (error) {
+  console.error('Error parsing answers from localStorage:', error)
+}
+if (!answers) {
+  answers = [0, 0, 0, 0] // Default answers
+  localStorage.setItem('answers', JSON.stringify(answers)) // Optional: save defaults back to local storage
+}
+
+function processAnswers() {
+  // What type of Wedding video sounds better?, 0 = NextDayFilm 1 = Heirloom
+  if (answers[1] === 0) {
+    pricingPieces.nextDayFilm.state = true
+    pricingPieces.heirloomFilm.state = false
+  } else if (answers[1] === 1) {
+    pricingPieces.nextDayFilm.state = false
+    pricingPieces.heirloomFilm.state = true
+  }
+  // What kind of wedding are you planning?' 0 & 1 are small weddings so override their preffernce for a longer film and suggest a next day film
+  if (answers[0] <= 1) {
+    pricingPieces.nextDayFilm.state = true
+    pricingPieces.heirloomFilm.state = false
+  }
+  // Would you like to hear your vows and the speeches included in a highlights film?, 0= Yes, Spoken Moments 1 = No
+  if (answers[2] === 0) {
+    pricingPieces.spokenMoments.state = true
+  } else if (answers[2] === 1) {
+    pricingPieces.spokenMoments.state = false
+  }
+  // Do you want Photography included in your Wedding Film Package?, 0= Yes, Photography
+  if (answers[3] === 0) {
+    pricingPieces.photography.state = true
+  } else if (answers[3] === 1) {
+    pricingPieces.photography.state = false
+  }
+  // Would you like to livestream, 0= Yes
+  if (answers[4] === 0) {
+    pricingPieces.liveStream.state = true
+  } else if (answers[4] === 1) {
+    pricingPieces.liveStream.state = false
+  }
+}
+
+console.log(answers)
 let pricingPieces = {
   nextDayFilm: {
-    state: false,
+    state: true,
     cost: 3400,
     name: 'The Next Day Film',
     button: document.getElementById('nextDayFilm'),
@@ -14,7 +61,7 @@ let pricingPieces = {
     button: document.getElementById('heirloomFilm'),
   },
   spokenMoments: {
-    state: true,
+    state: false,
     cost: 1000,
     name: 'Spoken Moments',
     button: document.getElementById('spokenMoments'),
@@ -26,7 +73,7 @@ let pricingPieces = {
     button: document.getElementById('photography'),
   },
   liveStream: {
-    state: true,
+    state: false,
     cost: 50,
     name: 'Ceremony Livestream',
     button: document.getElementById('liveStream'),
@@ -71,7 +118,8 @@ function updateView() {
   }
   quoteTotal.innerHTML = 'Total: $' + totalPrice
 }
-
+processAnswers()
+thereCanBeOnlyOne()
 updateView()
 readyForMoreClicks()
 

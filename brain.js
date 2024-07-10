@@ -6,6 +6,7 @@ let questions = [
   'What type of Wedding video sounds better?',
   'Would you like to hear your vows and the speeches included in a highlights film?',
   'Do you want Photography included in your Wedding Film Package?',
+  'Would you like to livestream the ceremony for absent family and friends',
   // 'Where is the wedding taking place? approximately?',
 ]
 //possible answers per question
@@ -22,6 +23,7 @@ let answers = [
     'Yes, please capture everything for us',
     'No, we will hire a photographer seperatly',
   ],
+  ['Yes', 'No, we can share the other videos with people later'],
   // [
   //   'Wellington',
   //   'The Wellington region',
@@ -46,8 +48,8 @@ let answers = [
 
 let progress = 0
 let choices = []
-// let progress = 5
-// let choices = [1, 1, 1, 1, 1]
+// let progress = 3
+// let choices = [1, 1, 1]
 
 let question = document.getElementById('questionText')
 let options = document.getElementById('options')
@@ -61,11 +63,16 @@ function logClick(buttonClicked) {
   } else {
     choices[progress] = buttonClicked
   }
-  console.log(choices)
+  // console.log(choices)
 }
 function updateView() {
+  if (progress === 5) {
+    console.log('time to move on')
+    localStorage.setItem('answers', JSON.stringify(choices))
+    window.open('quote.html', '_self')
+  }
   if (questions.length === progress) {
-    ConsLog()
+    // ConsLog()
     options.innerHTML = ''
     continueButton.innerHTML = ''
     question.innerHTML = ''
@@ -115,9 +122,9 @@ function readyForMoreClicks() {
   })
 }
 
-function ConsLog() {
-  console.log('this works when called')
-}
+// function ConsLog() {
+//   console.log('this works when called')
+// }
 
 // document.addEventListener('DOMContentLoaded', function () {
 //   var buttons = document.querySelectorAll('.button-30') // Get all buttons with the class '.button-30'
