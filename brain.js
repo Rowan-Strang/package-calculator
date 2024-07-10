@@ -66,7 +66,7 @@ function logClick(buttonClicked) {
   // console.log(choices)
 }
 function updateView() {
-  if (progress === 5) {
+  if (progress === questions.length) {
     console.log('time to move on')
     localStorage.setItem('answers', JSON.stringify(choices))
     window.open('quote.html', '_self')
@@ -95,6 +95,7 @@ function updateView() {
       button.textContent = 'Continue'
       button.className = 'button-continue'
       continueButton.appendChild(button)
+      continueButton.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
     readyForMoreClicks()
   }
