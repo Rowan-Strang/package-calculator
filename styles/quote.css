@@ -1,0 +1,344 @@
+body,
+h1,
+h2 {
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
+  /* max-width: 1000px; */
+}
+
+body {
+  align-items: center; /* Centers vertically */
+  background-color: lightgrey; /* Sets background color */
+}
+
+/* CSS */
+.button-continue,
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395a;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Raleway', sans-serif;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+  margin: 10px 0;
+}
+.button-continue {
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395a;
+  cursor: pointer;
+}
+.button-continue:focus,
+.button-30:focus {
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+.button-continue:hover,
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+.button-continue:active,
+.button-30:active {
+  box-shadow: #3a3a72 0 3px 7px inset;
+  transform: translateY(2px);
+}
+.button-continue.active,
+.button-30.active {
+  background-color: #d6d6e7; /* Change to a different background color */
+  color: #fff; /* Change text color for better contrast */
+  box-shadow: #3a3a72 0 5px 15px inset; /* More pronounced inset shadow */
+}
+.content {
+  display: flex; /* Enables flexbox layout */
+  justify-content: center; /* Centers content horizontally*/
+  align-items: center; /* Centers content vertically */
+  width: 100%; /* Ensures the container takes full width */
+  max-width: 1000px; /* Maximum width of the content area */
+  margin: auto; /* Auto margins for horizontal centering
+  height: 100vh; /* Takes at least the full height of the viewport */
+}
+
+.text-column {
+  flex: 1; /* Allocates 1/3 of the space to the text-column */
+  display: flex; /* Ensures the text-column is also a flex container */
+  flex-direction: column; /* Aligns children (h1, h2) in a column */
+  justify-content: center; /* Centers them vertically in the middle of the column */
+  align-items: flex-start; /* Aligns text to the left within the column */
+  padding-right: 20px; /* Optional: Adds spacing between text and video */
+  text-align: left; /* Ensures text within the column is aligned to the left */
+}
+
+.video-column {
+  flex: 2; /* Allocates 2/3 of the space to the video-column */
+  position: relative; /* Position relative for positioning the iframe absolutely */
+}
+
+iframe {
+  position: absolute; /* Absolute positioning relative to its parent */
+  top: 0; /* Aligns at the top of its container */
+  left: 0; /* Aligns to the left of its container */
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  border-radius: 40px; /* Apply rounded corners */
+  overflow: hidden; /* Ensure nested content respects border radius */
+}
+
+.question {
+  display: flex; /* Corrected 'flexbox' to 'flex' */
+  flex-direction: column; /* Stacks flex items vertically */
+  width: 100%; /* Ensures the container takes full width */
+  max-width: 600px; /* Maximum width of the content area */
+  margin: auto; /* Auto margins for horizontal centering */
+}
+
+#continueButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+}
+
+#options {
+  display: flex;
+  flex-direction: column; /* Stacks child elements (buttons) vertically */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto; /* Centers the container horizontally */
+}
+
+.package-builder {
+  /* background: #e7e7e7; */
+  padding: 20px;
+  border-radius: 8px;
+  width: 66%; /* Two-thirds of the container */
+}
+
+.quote {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 33%; /* One-third of the container */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  margin-top: 66px; /* Adjust this value as needed */
+}
+
+.package-builder h1,
+.quote h2 {
+  color: #333;
+}
+
+.package-builder .btn {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.package-builder .btn:hover {
+  background-color: #d4d4d4;
+}
+
+.quote ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Removes default margin */
+}
+
+.quote ul li {
+  background: #fff;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.film-type label,
+.extras label {
+  display: block; /* Ensures the label is a block-level element */
+  margin-bottom: 5px; /* Spacing between label and buttons */
+}
+
+.buttons {
+  display: flex; /* Maintains existing inline layout of buttons */
+  justify-content: start; /* Aligns buttons to the start */
+}
+
+.button-30 {
+  margin-right: 10px; /* Ensures spacing between buttons */
+}
+
+.extras label {
+  margin-top: 35px; /* Spacing between label and buttons */
+}
+
+.extras .buttons {
+  display: flex; /* Keeps the flex display */
+  flex-direction: column; /* Stacks the buttons vertically */
+  align-items: flex-start; /* Aligns buttons to the left */
+}
+
+.quote {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 33%; /* One-third of the container */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange children vertically */
+  justify-content: space-between; /* Space between items and total */
+  height: 100%; /* Full height to extend the section */
+}
+
+.quote ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Removes default margin */
+  flex-grow: 1; /* Allows this element to expand */
+}
+
+.quote ul li {
+  background: #fff;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.quote ul li:not(:last-child) {
+  border-bottom: none; /* Prevents double borders between items */
+}
+
+.quote p {
+  border-top: 1px solid #ccc; /* Adds a separating line */
+  padding-top: 10px; /* Space above the total */
+}
+
+.quote {
+  background: #f8f8f8; /* Light gray for paper-like appearance */
+  padding: 20px;
+  border-radius: 8px;
+  width: 33%; /* One-third of the container */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange children vertically */
+  justify-content: space-between; /* Space between items and total */
+  height: 100%; /* Full height to extend the section */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow to mimic slight elevation */
+  border: 1px solid #e0e0e0; /* Subtle border for definition */
+  font-family: 'Courier New', monospace; /* Monospace font for typewritten effect */
+}
+
+.quote ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Removes default margin */
+  flex-grow: 1; /* Allows this element to expand */
+  overflow-y: auto; /* Allows scrolling when content is too long */
+}
+
+.quote ul li {
+  background: transparent; /* No background for list items */
+  margin: 5px 0;
+  padding: 10px;
+  border: none; /* No borders between items */
+}
+
+.quote ul li:not(:last-child) {
+  border-bottom: 1px dashed #ccc; /* Dashed line to mimic receipt separators */
+}
+
+.quote p {
+  border-top: 1px solid #ccc; /* Adds a separating line */
+  padding-top: 10px; /* Space above the total */
+  font-weight: bold; /* Emphasize the total price */
+}
+
+.quote {
+  background-color: #f8f8f8; /* Base color for paper */
+  background-image: radial-gradient(
+      circle,
+      #fff,
+      #f8f8f8 40%,
+      #eee 70%,
+      #f8f8f8 100%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(255, 255, 255, 0.5) 1px,
+      rgba(255, 255, 255, 0.5) 2px
+    ); /* Simulated textured effect */
+  padding: 20px;
+  border-radius: 8px;
+  width: 33%; /* One-third of the container */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange children vertically */
+  justify-content: space-between; /* Space between items and total */
+  height: 100%; /* Full height to extend the section */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow to mimic slight elevation */
+  border: 1px solid #e0e0e0; /* Subtle border for definition */
+  font-family: 'Courier New', monospace; /* Monospace font for typewritten effect */
+}
+
+.quote ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Removes default margin */
+  flex-grow: 1; /* Allows this element to expand */
+  overflow-y: auto; /* Allows scrolling when content is too long */
+}
+
+.quote ul li {
+  background: transparent; /* No background for list items */
+  margin: 5px 0;
+  padding: 10px;
+  border: none; /* No borders between items */
+}
+
+.quote ul li:not(:last-child) {
+  border-bottom: 1px dashed #ccc; /* Dashed line to mimic receipt separators */
+}

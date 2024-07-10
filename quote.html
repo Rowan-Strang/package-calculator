@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Package Builder</title>
+    <link rel="stylesheet" href="./styles/quote.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="package-builder">
+        <h1>Build your Package</h1>
+        <div class="film-type">
+          <label>Film Type:</label>
+          <div class="buttons">
+            <button id="nextDayFilm" class="button-30">Next Day Film</button>
+            <button id="heirloomFilm" class="button-30">
+              The Heirloom Film
+            </button>
+          </div>
+        </div>
+        <div class="extras">
+          <label>More:</label>
+          <div class="buttons">
+            <button id="spokenMoments" class="button-30">Spoken Moments</button>
+            <button id="photography" class="button-30">Photography</button>
+            <button id="liveStream" class="button-30">
+              Ceremony Live Stream
+            </button>
+          </div>
+        </div>
+        <p>
+          Full Videos of the Ceremony and Speeches are included with every
+          package
+        </p>
+      </div>
+      <div class="quote">
+        <h2>Quote:</h2>
+        <ul>
+          <li>Next Day Film: $3400</li>
+          <li>Photography: $1000</li>
+          <!-- <li>Item: $200</li>
+          <li>Item: $300</li> -->
+        </ul>
+        <p id="total">Total: $1000</p>
+      </div>
+    </div>
+    <script type="module" src="./calculator.js"></script>
+  </body>
+</html>
